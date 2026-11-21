@@ -47,7 +47,7 @@ class PlainTransactionLogger(TransactionLogger):
         self.transaction_history = []
 
     def log(self, log_entry: str) -> None:
-        print(f"[RAW LOG] Saving: {log_entry}")
+        print(f"[STORAGE] Saving: {log_entry}")
         self.transaction_history.append(log_entry)
 
 class EncryptionDecorator(TransactionLogger):
@@ -107,4 +107,4 @@ try:
 except PermissionError as e:
     print(e)
 
-print("Admin History:", admin_proxy.view_history())
+print("Admin Logs:", admin_proxy.view_history())
